@@ -1,5 +1,11 @@
+// Styles
 import "./globals.css";
+
+// Types
 import type { Metadata } from "next";
+
+// Components
+import { ThemeProvider } from "@/components/themeprovider";
 
 export const metadata: Metadata = {
   title: "SEPATU",
@@ -13,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

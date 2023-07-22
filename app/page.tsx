@@ -1,9 +1,19 @@
-import { SpaceGroteskMedium, NeueMontreal } from "@/styles/fonts";
+//Assets
+import { NeueMontreal } from "@/styles/fonts";
+
+import Image from "next/image";
+
+async function getData() {}
+
+// Components
+import Header from "@/components/Header/Header";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className={SpaceGroteskMedium.className}>SEPATU</h1>
+    <main
+      className={`${NeueMontreal.className} mx-24 flex min-h-screen flex-col`}
+    >
+      <Header />
     </main>
   );
 }
