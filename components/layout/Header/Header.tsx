@@ -17,17 +17,15 @@ import {
   NavigationMenuLink,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
-import { DarkModeButton } from "../../input/DarkModeButton/DarkModeButton";
-import { Button } from "../../ui/button";
-import { Input } from "@/components/ui/input";
+} from "@/components/shadcn/ui/navigation-menu";
+import { DarkModeButton } from "@/components/input/DarkModeButton/DarkModeButton";
+import { Button } from "@/components/shadcn/ui/button";
+import { Input } from "@/components/shadcn/ui/input";
 import { BiSearch, BiUser, BiShoppingBag } from "react-icons/bi";
 
 export const Header = () => {
   return (
-    <header
-      className={`header my-8 grid w-full grid-cols-3 border-b-[1px] pb-2 border-solid sticky top-0 bg-background`}
-    >
+    <header className="sticky top-0 z-10 my-8 grid w-full grid-cols-3 border-b-[1px] border-solid bg-background pb-2">
       <div className="my-auto">
         <h2 className={`${NeueMontreal.className} cursor-pointer`}>
           Artifarti.
@@ -42,17 +40,29 @@ export const Header = () => {
       </div>
       <NavigationMenu className="my-auto ml-auto flex">
         <NavigationMenuList className="space-x-4">
-          <NavigationMenuItem className="flex flex-col justify-center items-center">
-            <Button className="h-14 w-14 rounded-full" aria-label="Shopping cart" aria-labelledby="shopping-cart">
+          <NavigationMenuItem className="flex flex-col items-center justify-center">
+            <Button
+              className="h-14 w-14 rounded-full"
+              aria-label="Shopping cart"
+              aria-labelledby="shopping-cart"
+            >
               <BiShoppingBag />
             </Button>
-            <span id="shopping-cart" className="text-xs hidden">Shopping cart</span>
+            <span id="shopping-cart" className="hidden text-xs">
+              Shopping cart
+            </span>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Button className="h-14 w-14 rounded-full" aria-label="User settings" aria-labelledby="user-settings">
+            <Button
+              className="h-14 w-14 rounded-full"
+              aria-label="User settings"
+              aria-labelledby="user-settings"
+            >
               <BiUser />
             </Button>
-            <span id="user-settings" className="text-xs hidden">User settings</span>
+            <span id="user-settings" className="hidden text-xs">
+              User settings
+            </span>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <DarkModeButton />
