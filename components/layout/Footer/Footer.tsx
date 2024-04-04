@@ -1,5 +1,7 @@
 export const Footer = () => {
   return (
-    <footer className="sticky bottom-0 left-0 mt-8 min-h-[200px] w-full border-[1px] border-solid"></footer>
+    <footer className="bottom-0 left-0 my-8 flex w-full items-center justify-center border-t-[1px] border-solid py-8">
+      <p> Built by © STUDIO KATER</p>
+    </footer>
   );
 };

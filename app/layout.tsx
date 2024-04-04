@@ -8,12 +8,11 @@ import { SpaceGroteskLight } from "@/styles/fonts";
 import type { Metadata } from "next";
 
 // Components
-import { ThemeProvider } from "@/components/themeprovider";
-import { Header, Footer } from "@/components/layout";
+import { Header, Footer, LayoutWrapper } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Artifarti.",
-  description: "Everyone's an artist.",
+  description: "For the artsy side in you.",
 };
 
 export default function RootLayout({
@@ -26,10 +25,11 @@ export default function RootLayout({
       <body
         className={`${SpaceGroteskLight.className} flex min-h-screen flex-col px-24`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <LayoutWrapper>
           <Header />
           {children}
-        </ThemeProvider>
+          <Footer />
+        </LayoutWrapper>
       </body>
     </html>
   );

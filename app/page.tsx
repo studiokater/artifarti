@@ -1,24 +1,32 @@
 // Components
 import { PhotosSection } from "@/components/ui/";
+import { AuthForm } from "@/components/ui/";
 
-// Lib
-import { unsplashApi } from "@/lib";
+// Supabase
+import { createClient as createServerClient } from "@/lib/supabase/server";
+import type { PostgrestError } from "@supabase/supabase-js";
+
+// Types
+import type { ArtItem } from "@/types";
 
 async function getData() {
-  const req = await unsplashApi.photos.getRandom({ count: 20 });
+  const supabase = createServerClient();
 
-  if (req.errors) {
-    throw new Error("Failed to fetch data");
+  let { data: content, error } = await supabase.from("content").select("*");
+
+  if (error) {
+    console.log(error);
+    return error;
   }
 
-  return req.response as ArtItem[];
+  return content as ArtItem[];
 }
 
 export default async function Home() {
-  const data = await getData();
+  const data: PostgrestError | ArtItem[] = await getData();
 
   return (
-    <main className="w-full">
+    <main className="flex w-full flex-1 flex-col">
       <PhotosSection data={data} />
     </main>
   );
