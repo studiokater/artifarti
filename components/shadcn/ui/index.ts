@@ -31,6 +31,7 @@ export {
 export { Label } from "@/components/shadcn/ui/label";
 export { Input } from "@/components/shadcn/ui/input";
 export { Button, buttonVariants } from "@/components/shadcn/ui/button";
+
 export {
   Card,
   CardHeader,
@@ -39,3 +40,18 @@ export {
   CardDescription,
   CardContent,
 } from "@/components/shadcn/ui/card";
+
+export {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/shadcn/ui/carousel";
+
+export {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/shadcn/ui/tabs";

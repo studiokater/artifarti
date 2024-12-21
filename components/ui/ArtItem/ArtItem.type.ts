@@ -1,4 +1,4 @@
-export type ArtItem = {
+export type ArtItemProps = {
   id: number;
   created_at: string;
   file_url: string;
